@@ -8,7 +8,7 @@ On Artists Only, users can:
     <!-- - other users can comment on posts -->
     <!-- - users can offer to collaborate with the Original Poster of a post -->
     <!-- - if the OP accepts, the second poster can upload a companion piece to their post, a short story based off of a drawing, extra lines of a poem, a picture they feels go well with a painting -->
-    <!-- - these two users will be able to enter a chatroom together, where they can discuss anything about the collaboration (comment: this will be implemented last, as the chatroom will be difficult for me :) ) -->
+    <!-- - these two users will be able to enter a chatroom together, where they can discuss anything about the collaboration (comment: this will be implemented last, as the chatroom will be difficult for me) -->
     <!-- - the OP can finalize their collaboration and publish it to the website -->
     <!-- - users can upvote posts that they like -->
     <!-- - the top rated posts of the week will be displayed in a Hall of Fame at the top of the page -->
