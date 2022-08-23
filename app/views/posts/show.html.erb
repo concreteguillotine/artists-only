@@ -1,0 +1,7 @@
+<div class="post">
+    <%= @post.title %>
+    <%= @post.text %>
+<% if @post.image.present? %>
+    <%= image_tag @post.image %>
+<% end %>
+</div>

@@ -1,7 +1,7 @@
 Artists Only is a project designed to test my ability to utilize JavaScript and Rails to create an interactive website for users to collaborate and share art on. 
 <!-- In the testing stage, this file will also be used to track the features as they are implemented and tested, non-commented features listed below are complete, some features will be removed as they aren't necessary to be listed for the average user (deleting posts, leaving chatrooms, etc.), these will be marked with an (*) for deletion before deployment -->
 On Artists Only, users can:
-    <!-- - create an account -->
+    - create an account
     <!-- - delete account (*) -->
     <!-- - upload images or text: drawings, paintings, random pictures from their phones, short stories or poetry, etc. -->
     <!-- - delete posts (*) -->

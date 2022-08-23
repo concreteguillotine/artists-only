@@ -1,0 +1,7 @@
+<%= bootstrap_form_with(model: post, local: true) do |form| %>
+    <%= form.text_field :title %>
+    <%= form.text_field :text %>
+    <%= form.file_field :image, label: "Image" %>
+    <%= form.check_box :open , label: "Open?" %>
+    <%= form.submit %>
+<% end %>
