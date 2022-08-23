@@ -3,7 +3,7 @@ Artists Only is a project designed to test my ability to utilize JavaScript and 
 On Artists Only, users can:
     - create an account
     <!-- - delete account (*) -->
-    <!-- - upload images or text: drawings, paintings, random pictures from their phones, short stories or poetry, etc. -->
+    - upload images or text: drawings, paintings, random pictures from their phones, short stories or poetry, etc.
     <!-- - delete posts (*) -->
     <!-- - other users can comment on posts -->
     <!-- - users can offer to collaborate with the Original Poster of a post -->
