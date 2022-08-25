@@ -20,9 +20,10 @@ RSpec.feature "Users can create new projects" do
 
         within(".post") do
             expect(page).to have_content "Cool Project"
+            expect(page).to have_content "user1"
             expect(page).to have_content "This is my new project, add what you like!"
             expect(page).to have_css("img[src*='testimage.jpg']")
-            # expect(page).to have_content "This post is open for editing, request to collaborate here!"
+            expect(page).to have_content "This post is open for editing, request to collaborate here!"
         end
     end
 end

@@ -1,7 +1,11 @@
 <div class="post">
-    <%= @post.title %>
+    <%= @post.title %> by <%= @post.author.username %>
     <%= @post.text %>
 <% if @post.image.present? %>
     <%= image_tag @post.image %>
+<% end %>
+
+<% if @post.open %>
+    This post is open for editing, request to collaborate here!
 <% end %>
 </div>
