@@ -12,8 +12,8 @@
 <% @posts.each do |post| %>
     <% if post.image.exists? %>
         <%= link_to post.image, post %>
-        <%= link_to post.name, post %>
+        <%= link_to post.title, post %>
     <% else %>
-        <%= link_to post.name, post %>
+        <%= link_to post.title, post %>
     <% end %>
 <% end %>
