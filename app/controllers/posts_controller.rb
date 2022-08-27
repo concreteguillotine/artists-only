@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: %i(show)
+    before_action :set_post, only: %i(show edit update destroy)
   
     def new
         @post = Post.new
@@ -19,6 +19,23 @@ class PostsController < ApplicationController
     end
 
     def show
+    end
+
+    def edit
+    end
+
+    def update
+        @post.update(post_params)
+
+        flash[:notice] = "Post edited."
+        redirect_to @post
+    end
+
+    def destroy
+        @post.destroy
+        
+        flash[:notice] = "Your post has been deleted."
+        redirect_to root_path
     end
 
     private

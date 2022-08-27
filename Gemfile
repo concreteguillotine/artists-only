@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise', '~> 4.7.3'
 gem 'bootstrap'
 gem 'bootstrap_form'
+gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
