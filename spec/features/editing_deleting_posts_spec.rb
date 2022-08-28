@@ -43,6 +43,7 @@ RSpec.feature "Users can create new projects" do
         click_link "Cool Project"
 
         expect(page).not_to have_content "Edit post"
+        expect(page).not_to have_content "Delete post"
     end
 end
 

@@ -16,3 +16,16 @@
                 data: { confirm: "Do you want to delete this post?" } %>
     <% end %>
 </div>
+
+<div class="comments">
+    <h3> Comments </h3>
+
+    <% comments = @post.comments.persisted.ordered %>
+    <% if comments.any? %>
+        <%= render comments %>
+    <% else %>
+        <p> No one has left comments on this post yet. </p>
+    <% end %>
+
+    <%= render "comments/form", post: @post, comment: @comment %>
+</div>
