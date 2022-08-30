@@ -1,12 +1,12 @@
 <div class="post">
-    <%= @post.title %> by <%= @post.author.username %>
+    <%= @post.title %> by <%= @post.author %>
     <%= @post.text %>
 
     <% if @post.image.present? %>
         <%= image_tag @post.image %>
     <% end %>
     <% if @post.open %>
-        "This post is open for editing, request to collaborate here!"  
+        This post is open for editing, request to collaborate <%= link_to "here!", new_post_conversation_path(@post, @conversation) %> 
     <% end %>
 
     <% if current_user == @post.author %>

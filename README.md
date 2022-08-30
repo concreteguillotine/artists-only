@@ -5,7 +5,7 @@ On Artists Only, users can:
     <!-- - delete account (*) -->
     - upload images or text: drawings, paintings, random pictures from their phones, short stories or poetry, etc.
     - delete posts (*)
-    <!-- - other users can comment on posts -->
+    - other users can comment on posts
     <!-- - users can offer to collaborate with the Original Poster of a post -->
     <!-- - if the OP accepts, the second poster can upload a companion piece to their post, a short story based off of a drawing, extra lines of a poem, a picture they feels go well with a painting -->
     <!-- - these two users will be able to enter a chatroom together, where they can discuss anything about the collaboration (comment: this will be implemented last, as the chatroom will be difficult for me) -->

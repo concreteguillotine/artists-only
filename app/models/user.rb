@@ -7,6 +7,7 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
   has_many :post
   has_many :comment
+  has_many :conversations
 
   def email_required?
     false
