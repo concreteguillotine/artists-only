@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   validates :email, uniqueness: true
   validates :username, uniqueness: true
-  has_many :post
+  has_many :posts
   has_many :comment
   has_many :conversations
 

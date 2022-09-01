@@ -11,6 +11,18 @@
   </head>
 
   <body>
+    <% if user_signed_in? %>
+        Signed in as <%= current_user.username %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+        <%= link_to "New post", new_post_path %>
+        <%= link_to "Your profile", user_path(current_user) %>
+    <% end %>
+
+    <% unless user_signed_in? %>
+        <%= link_to "Sign up", new_user_registration_path %>
+        <%= link_to "Sign in", new_user_session_path %>
+    <% end %>
+
     <% flash.each do |key, message| %>
       <div><%= message %></div>
     <% end %>

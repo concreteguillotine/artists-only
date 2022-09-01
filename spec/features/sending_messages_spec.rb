@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Users can comment on posts" do
+RSpec.feature "Users can send messages" do
     let!(:user1) { FactoryBot.create(:user, username: "user1") }
     let!(:user2) { FactoryBot.create(:user, username: "user2") }
 
@@ -16,7 +16,7 @@ RSpec.feature "Users can comment on posts" do
         click_button "Create Post"
     end
 
-    scenario "users can send messages to the OP to collaborate" do
+    scenario "to the OP of a post to collaborate" do
         visit "/"
         click_link "Sign out"
         login_as(user2)
