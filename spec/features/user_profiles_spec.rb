@@ -24,7 +24,7 @@ RSpec.feature "Users have profiles" do
         click_link "Your profile"
     end
 
-    scenario "they can visit their profile and see their own posts" do
+    scenario "where they can see their own posts" do
         expect(page).to have_content "This is your profile"
 
         within(".posts") do
@@ -32,7 +32,7 @@ RSpec.feature "Users have profiles" do
         end
     end
 
-    scenario "but not other users' posts" do
+    scenario "but they can't see other users' posts" do
         within(".posts") do
             expect(page).not_to have_content "Cool Project"
         end

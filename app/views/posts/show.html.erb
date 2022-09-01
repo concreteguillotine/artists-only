@@ -1,5 +1,5 @@
 <div class="post">
-    <%= @post.title %> by <%= @post.author %>
+    <%= @post.title %> by <%= @post.author.username %>
     <%= @post.text %>
 
     <% if @post.image.present? %>
