@@ -31,5 +31,14 @@ RSpec.feature "Users can send messages" do
         click_button "Send message"
 
         expect(page).to have_content "Message sent, awaiting approval from the original poster!"
+
+        click_link "Sign out"
+        login_as(user1)
+        visit "/"
+        click_link "Your profile"
+
+        expect(page).to have_content "Messages:"
+        expect(page).to have_content "A poem of the beauty of Margot"
+        expect(page).to have_content "I think this image and poem will go along well!"
     end
 end

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     
     def show
         @posts = Post.all
+        @conversations = Conversation.all
     end
 
     def new

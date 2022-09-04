@@ -1,12 +1,22 @@
 This is your profile
 
-<ul class="posts">
-    <h2> Your posts </h2>
+<h2> Your posts: </h2>
+    <ul class="posts">
         <% @posts.each do |post| %>
             <% if post.author == current_user %>
                 <%= link_to post.title, post %>
             <% end %>
         <% end %>
-</ul>
+    </ul>
+
+<h2> Messages: </h2>
+    <ul class="messages">
+        <% @conversations.each do |c| %>
+            <% if c.user == current_user %>
+                <%= c.text %>
+                <%= c.description %>
+            <% end %>
+        <% end %>
+    </ul>
 
 
