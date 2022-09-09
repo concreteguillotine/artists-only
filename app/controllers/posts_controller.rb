@@ -26,10 +26,14 @@ class PostsController < ApplicationController
     end
 
     def update
-        @post.update(post_params)
+        if current_user == @post.author
+            @post.update(post_params)
 
-        flash[:notice] = "Post edited."
-        redirect_to @post
+            flash[:notice] = "Post edited."
+            redirect_to @post
+        else
+            conversation_start(post_params)
+        end
     end
 
     def destroy
@@ -42,7 +46,7 @@ class PostsController < ApplicationController
     private
 
     def post_params
-        params.require(:post).permit(:title, :text, :image, :open)
+        params.require(:post).permit(:title, :text, :image, :open, :closed)
     end
 
     def set_post

@@ -16,9 +16,9 @@ RSpec.feature "Users can send messages" do
         click_button "Create Post"
     end
 
-    scenario "to the OP of a post to collaborate" do
+    scenario "to the OP of a post to collaborate, the OP then can approve it" do
         visit "/"
-        click_link "Sign out"
+        click_button "Sign out"
         login_as(user2)
         click_link "Cool Project"
 
@@ -32,13 +32,15 @@ RSpec.feature "Users can send messages" do
 
         expect(page).to have_content "Message sent, awaiting approval from the original poster!"
 
-        click_link "Sign out"
+        click_button "Sign out"
         login_as(user1)
         visit "/"
         click_link "Your profile"
 
-        expect(page).to have_content "Messages:"
-        expect(page).to have_content "A poem of the beauty of Margot"
-        expect(page).to have_content "I think this image and poem will go along well!"
+        within(".messages") do
+            expect(page).to have_content "Cool Project"
+            expect(page).to have_content "A poem of the beauty of Margot"
+            expect(page).to have_content "I think this image and poem will go along well!"
+        end
     end
 end

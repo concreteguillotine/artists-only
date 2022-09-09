@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :path_prefix => 'd'
  
   root "home#index"
 
@@ -8,7 +8,7 @@ Rails.application.routes.draw do
     resources :conversations
   end
 
-  resources :users do
+  resources :users, only: [:show] do
     resources :conversations
   end
 end

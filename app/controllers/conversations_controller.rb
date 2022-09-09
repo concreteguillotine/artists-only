@@ -10,17 +10,7 @@ class ConversationsController < ApplicationController
     end
 
     def create
-        @conversation = @post.conversations.build(message_params)
-        @conversation.author = current_user
-        @conversation.user = @post.author
-        
-        if @conversation.save
-            flash[:notice] = "Message sent, awaiting approval from the original poster!"
-            redirect_to @post
-        else
-            flash[:notice] = "Something wrong, please try again"
-            redirect_to @post
-        end
+        conversation_start(message_params)
     end
 
     private
@@ -32,5 +22,4 @@ class ConversationsController < ApplicationController
     def set_post
         @post = Post.find(params[:post_id])
     end
-
 end
