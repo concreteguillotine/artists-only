@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_06_001727) do
+ActiveRecord::Schema.define(version: 2022_09_10_013107) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2022_09_06_001727) do
     t.boolean "open", default: false
     t.integer "author_id"
     t.boolean "closed", default: true
+    t.text "addltext"
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 

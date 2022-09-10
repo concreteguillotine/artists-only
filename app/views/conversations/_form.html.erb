@@ -1,6 +1,6 @@
 <%= bootstrap_form_with(model: [post, conversation], local: true) do |form| %>
     <%= form.text_field :text %>
     <%= form.text_field :description %>
-    <%= form.file_field :image, label: "Image" %>
+    <%= form.file_field :addlimage, label: "Image" %>
     <%= form.submit "Send message" %>
 <% end %>

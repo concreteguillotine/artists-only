@@ -1,9 +1,15 @@
 <div class="post">
     <%= @post.title %> 
     <%= @post.text %>
+    <% if @post.addltext.present? %>
+        <%= @post.addltext %>
+    <% end %>
 
     <% if @post.image.present? %>
         <%= image_tag @post.image %>
+    <% end %>
+    <% if @post.addlimage.present? %>
+        <%= image_tag @post.addlimage %>
     <% end %>
 
     <% if current_user == @post.author %>

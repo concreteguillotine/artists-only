@@ -1,10 +1,13 @@
 <h2> Messages: </h2>
-    <ul class="messages">
-        <% @conversations.each do |c| %>
+
+    <% @conversations.each do |c| %>
             <% if c.user == current_user %>
                 <%= c.post.title %>
                 <%= c.text %>
                 <%= c.description %>
+                <% if c.image.present? %>
+                    <%= c.image %>
+                <% end %>                
+                <%= link_to "Add to post", add_post_path(@post), method: :patch %>
             <% end %>
-        <% end %>
-    </ul>
+    <% end %>

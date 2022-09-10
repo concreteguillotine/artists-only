@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :set_user, only: %i(show)
+    before_action :set_post, only: %i(show)
 
     def index
         @users = User.all
@@ -34,5 +35,9 @@ class UsersController < ApplicationController
 
     def set_user
         @user = User.find(params[:id])
+    end
+
+    def set_post
+        @post = Post.find(params[:id])
     end
 end

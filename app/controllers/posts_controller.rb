@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: %i(show edit update destroy)
+    before_action :set_post, only: %i(show edit update destroy add)
+    before_action :set_conversation, only: %i(add)
   
     def new
         @post = Post.new
@@ -43,10 +44,29 @@ class PostsController < ApplicationController
         redirect_to root_path
     end
 
+    def add
+        @post.addltext = @conversation.text
+        if @conversation.image.present?
+            @post.addlimage = @conversation.image
+        end
+
+        @post.save
+            flash[:notice] = "Additions added!"
+            redirect_to @post
+    end
+
     private
 
     def post_params
-        params.require(:post).permit(:title, :text, :image, :open, :closed)
+        params.require(:post).permit(:title, :text, :image, :addltext, :open, :closed)
+    end
+
+    def message_params
+        params.require(:conversation).permit(:text, :description, :image)
+    end
+
+    def set_conversation
+        @conversation = Conversation.find(params[:id])
     end
 
     def set_post

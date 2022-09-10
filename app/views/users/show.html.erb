@@ -1,23 +1,19 @@
 This is your profile
 
-<h2> Your posts: </h2>
-    <ul class="posts">
+
+<ul class="posts">
+    <h2> Your posts: </h2>
         <% @posts.each do |post| %>
             <% if post.author == current_user %>
                 <%= link_to post.title, post %>
             <% end %>
         <% end %>
-    </ul>
+</ul>
 
-<h2> Messages: </h2>
-    <ul class="messages">
-        <% @conversations.each do |c| %>
-            <% if c.user == current_user %>
-                <%= c.post.title %>
-                <%= c.text %>
-                <%= c.description %>
-            <% end %>
-        <% end %>
-    </ul>
+
+<ul class="messages">
+    <h2> Messages: </h2>
+        <%= render "conversations/conversation", post: @post, conversation: @conversation %>
+</ul>
 
 
