@@ -50,6 +50,8 @@ class PostsController < ApplicationController
             @post.addlimage = @conversation.image
         end
 
+        @post.toggle(:open).save
+
         @post.save
             flash[:notice] = "Additions added!"
             redirect_to @post

@@ -47,5 +47,12 @@ RSpec.feature "Users can send messages" do
         expect(page).to have_content "Additions added!"
 
         expect(page).to have_content "A poem of the beauty of Margot"
+
+        visit "/"
+        click_button "Sign out"
+        login_as(user2)
+        click_link "Cool Project"
+
+        expect(page).not_to have_content "This post is open for editing, request to collaborate here!"  
     end
 end
