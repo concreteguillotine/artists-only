@@ -4,4 +4,5 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_many :conversations, dependent: :destroy
     belongs_to :author, class_name: "User"
+    acts_as_votable
 end

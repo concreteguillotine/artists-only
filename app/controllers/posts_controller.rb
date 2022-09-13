@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-    before_action :set_post, only: %i(show edit update destroy add)
+    before_action :set_post, only: %i(show edit update destroy add like dislike)
     before_action :set_conversation, only: %i(add)
   
     def new
@@ -57,6 +57,15 @@ class PostsController < ApplicationController
             redirect_to @post
     end
 
+    def like
+        @post.like_by current_user
+        redirect_to @post
+    end
+
+    def unlike
+        @post.unliked_by current_user
+        redirect_to @post
+    end
     private
 
     def post_params

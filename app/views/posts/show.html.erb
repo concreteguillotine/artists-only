@@ -12,6 +12,13 @@
         <%= image_tag @post.addlimage %>
     <% end %>
 
+    This post has <%= @post.get_likes.size %> <%= (@post.get_likes.size) == 1 ? "vote!" : "votes!" %>
+    <% if current_user.liked? @post %>
+        <%= button_to "Unlike", unlike_post_path(@post), method: :get %> 
+    <% else %>
+        <%= button_to "Like", like_post_path(@post), method: :get %> 
+    <% end %>
+
     <% if current_user == @post.author %>
         <%= link_to "Edit post", edit_post_path(@post) %>
         <%= link_to "Delete post", post_path(@post),

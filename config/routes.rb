@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       patch :add
+      get "like", to: "posts#like"
+      get "unlike", to: "posts#unlike"
     end
     resources :comments, only: [:create, :destroy]
     resources :conversations
