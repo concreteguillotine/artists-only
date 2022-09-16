@@ -36,4 +36,12 @@ RSpec.feature "Users can sign up" do
         click_button "Sign out"
         expect(page).to have_content("Signed out successfully.")
     end
+
+    scenario "users can delete their posts from their profile" do
+        login_as(user)
+        visit "/"
+        click_button "Your profile"
+        click_link "Delete profile"
+        expect(page).to have_content("Your profile has been deleted! Good bye.")
+    end
 end

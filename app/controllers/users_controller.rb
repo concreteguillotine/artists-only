@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: %i(show edit update)
-    before_action :set_post, only: %i(show)
+    before_action :set_user, only: %i(show edit update destroy)
 
     def index
         @users = User.all
@@ -37,6 +36,13 @@ class UsersController < ApplicationController
         redirect_to user_path(current_user)
     end
 
+    def destroy
+        @user.destroy
+        
+        flash[:notice] = "Your profile has been deleted! Good bye."
+        redirect_to root_path
+    end
+
     private
 
     def user_params
@@ -47,7 +53,4 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
     end
 
-    def set_post
-        @post = Post.find(params[:id])
-    end
 end
