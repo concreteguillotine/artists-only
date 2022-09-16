@@ -7,7 +7,7 @@ RSpec.feature "Users can vote on posts" do
     before do
         login_as(user1)
         visit "/"
-        click_link "New post"
+        click_button "New post"
 
         fill_in "Title", with: "Cool Project"
         attach_file("Image", "spec/fixtures/testimage.jpg")

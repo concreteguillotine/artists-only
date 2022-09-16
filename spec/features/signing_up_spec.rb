@@ -8,20 +8,24 @@ RSpec.feature "Users can sign up" do
     end
 
     scenario "when providing valid details" do
-        click_link "Sign up"
+        click_button "Sign up"
         fill_in "Email", with: "text@example.com"
         fill_in "Username", with: "Username"
         fill_in "Password", with: "password"
         fill_in "Password confirmation", with: "password"
-        click_button "Sign up"
+        within(".actions") do
+            click_button "Sign up"
+        end
         expect(page).to have_content("You have signed up successfully.")
     end
 
     scenario "after signing up, users can sign in" do
-        click_link "Sign in"
+        click_button "Sign in"
         fill_in "Username", with: user.username
         fill_in "Password", with: "password"
-        click_button "Sign in"
+        within(".actions") do
+            click_button "Sign in"
+        end
         expect(page).to have_content("Signed in successfully.")
         expect(page).to have_content("Signed in as #{user.username}")
     end
@@ -29,7 +33,7 @@ RSpec.feature "Users can sign up" do
     scenario "once signed in, users can sign out" do
         login_as(user)
         visit "/"
-        click_link "Sign out"
+        click_button "Sign out"
         expect(page).to have_content("Signed out successfully.")
     end
 end

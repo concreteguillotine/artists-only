@@ -7,7 +7,7 @@ RSpec.feature "Users can create new projects" do
     before do
         login_as(user1)
         visit "/"
-        click_link "New post"
+        click_button "New post"
         fill_in "Title", with: "Cool Project"
         attach_file("Image", "spec/fixtures/testimage.jpg")
         fill_in "Text", with: "This is my new project, add what you like!"
@@ -37,7 +37,7 @@ RSpec.feature "Users can create new projects" do
     scenario "other users can't see either links" do
         visit "/"
 
-        click_link "Sign out"
+        click_button "Sign out"
         login_as(user2)
 
         click_link "Cool Project"

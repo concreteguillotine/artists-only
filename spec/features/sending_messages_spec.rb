@@ -7,7 +7,7 @@ RSpec.feature "Users can send messages" do
     before do
         login_as(user1)
         visit "/"
-        click_link "New post"
+        click_button "New post"
 
         fill_in "Title", with: "Cool Project"
         attach_file("Image", "spec/fixtures/testimage.jpg")
@@ -35,7 +35,7 @@ RSpec.feature "Users can send messages" do
         click_button "Sign out"
         login_as(user1)
         visit "/"
-        click_link "Your profile"
+        click_button "Your profile"
 
         within(".messages") do
             expect(page).to have_content "Cool Project"

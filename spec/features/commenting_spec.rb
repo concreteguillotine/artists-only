@@ -9,7 +9,7 @@ RSpec.feature "Users can comment on posts" do
 
     scenario "with text" do
         visit "/"
-        click_link "New post"
+        click_button "New post"
 
         fill_in "Title", with: "Cool Project"
         attach_file("Image", "spec/fixtures/testimage.jpg")
