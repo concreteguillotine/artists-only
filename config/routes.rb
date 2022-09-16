@@ -13,7 +13,8 @@ Rails.application.routes.draw do
     resources :conversations
   end
 
-  resources :users, only: [:show] do
+  resources :users do
     resources :conversations
   end
+
 end

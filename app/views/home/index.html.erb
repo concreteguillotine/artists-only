@@ -1,8 +1,10 @@
-<% @posts.each do |post| %>
-    <% if post.image.present? %>
-        <%= link_to image_tag(post.image), post %>
-        <%= link_to post.title, post %>
-    <% else %>
-        <%= link_to post.title, post %>
+<div class="posts">
+    <% @posts.each do |post| %>
+        <% if post.image.present? %>
+            <%= link_to image_tag(post.image), post %>
+            <%= link_to post.title, post %>
+        <% else %>
+            <%= link_to post.title, post %>
+        <% end %>
     <% end %>
-<% end %>
+</div>

@@ -1,0 +1,5 @@
+<%= bootstrap_form_with(model: @user, local: true) do |form| %>
+    <%= form.text_field :about, label: "About me" %>
+    <%= form.file_field :image, label: "Avatar" %>
+    <%= form.submit "Update profile" %>
+<% end %>

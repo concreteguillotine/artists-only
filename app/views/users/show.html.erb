@@ -1,5 +1,12 @@
 This is your profile
+<%= link_to "Edit profile", edit_user_path(@user), method: :get %>
 
+<% if @user.image.present? %>
+    <%= @user.image %>
+<% end %>
+<% if @user.about.present? %>
+    <%= @user.about %>
+<% end %>
 
 <ul class="posts">
     <h2> Your posts: </h2>
@@ -9,7 +16,6 @@ This is your profile
             <% end %>
         <% end %>
 </ul>
-
 
 <ul class="messages">
     <h2> Messages: </h2>

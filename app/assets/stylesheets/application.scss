@@ -13,4 +13,14 @@
  *= require_tree .
  *= require_self
  */
-@import 'rails_bootstrap_forms';
+ @import 'rails_bootstrap_forms';
+
+body {
+    background-color: grey;
+    .header {
+        display: block;
+        align-items: baseline;
+        border-bottom: 5px double black;
+    }
+}
+

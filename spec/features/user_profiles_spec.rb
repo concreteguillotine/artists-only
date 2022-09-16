@@ -6,23 +6,34 @@ RSpec.feature "Users have profiles" do
     before do
         login_as(user1)
         visit "/"
-        click_link "New post"
+        click_button "New post"
 
         fill_in "Title", with: "Cool Project"
         click_button "Create Post"
 
         visit "/"
-        click_link "Sign out"
+        click_button "Sign out"
 
         login_as(user2)
         visit "/"
-        click_link "New post"
+        click_button "New post"
 
         fill_in "Title", with: "Different Project"
         click_button "Create Post"
 
-        click_link "Your profile"
+        click_button "Your profile"
     end
+
+    scenario "they can edit their profile, adding an avatar and about me (for now)" do
+        click_link "Edit profile"
+        attach_file("Avatar", "spec/fixtures/testimage.jpg")
+        fill_in "About me", with: "My name is user2, and I'm so cool"
+        click_button "Update profile"
+
+        expect(page).to have_content "Profile updated."
+        expect(page).to have_content "My name is user2"
+    end
+
 
     scenario "where they can see their own posts" do
         expect(page).to have_content "This is your profile"

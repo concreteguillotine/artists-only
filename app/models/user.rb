@@ -8,8 +8,9 @@ class User < ApplicationRecord
   has_many :posts
   has_many :comment
   has_many :conversations
+  has_one_attached :image
   acts_as_voter
-  
+
   def email_required?
     false
   end

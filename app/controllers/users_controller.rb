@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: %i(show)
+    before_action :set_user, only: %i(show edit update)
     before_action :set_post, only: %i(show)
 
     def index
@@ -27,10 +27,20 @@ class UsersController < ApplicationController
         end
     end
 
+    def edit
+    end
+
+    def update
+        @user.update(user_params)
+
+        flash[:notice] = "Profile updated."
+        redirect_to user_path(current_user)
+    end
+
     private
 
     def user_params
-        params.require(:user).permit(:email, :password, :username)
+        params.require(:user).permit(:email, :password, :username, :about, :image)
     end
 
     def set_user
